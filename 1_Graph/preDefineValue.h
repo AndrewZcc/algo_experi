@@ -1,0 +1,11 @@
+/*
+ * Created by zhchuch.
+ */
+
+#ifndef TEN_EIGHT_ALGORITHM_PREDEFINEVALUE_H
+#define TEN_EIGHT_ALGORITHM_PREDEFINEVALUE_H
+
+#define V 4
+#define INF 99999
+
+#endif //TEN_EIGHT_ALGORITHM_PREDEFINEVALUE_H

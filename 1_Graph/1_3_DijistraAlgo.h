@@ -10,10 +10,8 @@
 #define DIJISTRAALGO_H
 
 #include <iostream>
+#include "preDefineValue.h"
 using namespace std;
-
-#define V 9
-#define INF 65535
 
 // 找到当前所有节点中 已确信拥有最短距离的节点
 int minDistance(int* dist, bool* spt)
