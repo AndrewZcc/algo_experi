@@ -27,9 +27,9 @@ void DFSHelper(Graph g, int start, bool *visited)
 void Graph::DFS(int start)
 {
     cout << "DFS("<<start<<"): " << endl;
-    bool *visited = new bool[V];
+    bool *visited = new bool[VG];
 
-    memset(visited, 0, V);
+    memset(visited, 0, VG);
 
     DFSHelper(*this, start, visited);
 

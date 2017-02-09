@@ -6,6 +6,7 @@
 #include "1_Graph/1_5_UnionFind.h"
 #include "1_Graph/1_6_KruskalAlgo.h"
 #include "1_Graph/1_7_PrimAlgo.h"
+#include "1_Graph/1_8_TopologicalSort.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ int main() {
  * ----------------------------
  */
     /*
+    // 1-1, 1-2
     cout << "BFS and DFS Algorithm" << endl;
     Graph g(4);
     g.addEdge(0, 1);
@@ -36,6 +38,7 @@ int main() {
     g.DFS(2);
     g.DFS(3);
 
+    // 1-3
     cout << endl << "Dijistra's Shortest Path Algorithm" << endl;
     int graph[][9] = {
             {0, 4, 0, 0, 0, 0, 0, 8, 0},
@@ -50,6 +53,7 @@ int main() {
     };
     dijistra(graph, 0);
 
+    // 1-4
     cout << endl << "Floyd's All Pairs Shortest Path Algorithm" << endl;
     int graph[][4] = {
             {0, 5, INF, 10},
@@ -59,8 +63,8 @@ int main() {
     };
     floydAlgo(graph);
 
+    // 1-5
     cout << endl << "UnionFind Algorithm: Detect Equality of entries / Cycle in Graph." << endl;
-
     UnionFind uf(10);
     uf.printUF();
     cout << "Number of connections: " << uf.getCount() << endl;
@@ -79,11 +83,10 @@ int main() {
     cout << "Number of connections: " << uf.getCount() << endl;
     uf.isConnected(8, 9) ? cout << "8 yes 9\n" : cout << "8 no 9\n";
     uf.isConnected(8, 6) ? cout << "8 yes 6\n" : cout << "8 no 6\n";
-
     cout << endl << uf.Find(4) << " " << uf.Find(8) << endl;
 
+    // 1-6
     cout << endl << "Kruskal Algorithm: Minimum Spanning Tree Algorithm" << endl;
-
     GraphKA* graph = createGraphKA(4, 5);
 
     // add edge 0-1
@@ -112,8 +115,8 @@ int main() {
     graph->edge[4].weight = 4;
 
     KruskalAlgo(graph);
-    */
 
+    // 1-7
     cout << endl << "Prim Algorithm: Minimum Spanning Tree Algorithm (2)" << endl;
     int graphPA[][5] = {    // represent the graph using adjacency-matrix!
             {0, 2, 0, 6, 0},
@@ -124,6 +127,19 @@ int main() {
     };
 
     PrimAlgo(graphPA);
+    */
+
+    // 1-8
+    cout << endl << "Topological Sorting of the given DAG graph \n";
+    Graph g(6);
+    g.addEdge(5, 2);
+    g.addEdge(5, 0);
+    g.addEdge(4, 0);
+    g.addEdge(4, 1);
+    g.addEdge(2, 3);
+    g.addEdge(3, 1);
+    g.printGraph();
+    g.topologicalSort();
 
     return 0;
 }
