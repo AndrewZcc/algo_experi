@@ -26,6 +26,18 @@ public:
         VG = v;
         adj = new list<int>[VG];
     }
+
+    // 定义拷贝构造函数, 系统默认的拷贝构造函数 不会帮你 申请空间和拷贝空间
+    Graph(const Graph& g)
+    {
+        VG = g.VG;
+        adj = new list<int>[g.VG];
+
+        for (int i=0; i<g.VG; i++)
+            for (auto iter=g.adj[i].begin(); iter!=g.adj[i].end(); iter++)
+                adj[i].push_back(*iter);
+    }
+
     void addEdge(int v, int w)
     {
         adj[v].push_back(w);
@@ -40,6 +52,11 @@ public:
     friend void topSortHelper(Graph g, stack<int>& s, int vertex, bool* visited);
 
     void printGraph();
+
+    void bridge();
+    friend void findBridgeHelper(Graph g, int v, bool* visited, int* disc, int* low, int* parent);
+    void allBridges();
+    friend int numConnectedParts(Graph graph);
 };
 
 void Graph::BFS(int s)
