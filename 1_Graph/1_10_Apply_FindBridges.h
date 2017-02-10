@@ -33,7 +33,7 @@ int numConnectedParts(Graph graph)
             //for (int k=0; k<graph.VG; k++) cout << parent[k] << " "; cout << endl;
 
             /**
-             * 注意: 在进行 比较和复制 时, 等号右边的 右值 一定要是常量,不能使变量,否则会导致运行逻辑错误
+             * 注意: 在进行 比较和赋值 时, 等号右边的 右值 一定要是常量,不能使用变量,否则很可能导致运行逻辑错误
              */
             int a = parent[*iter], b = parent[i];
             if (parent[i] < parent[*iter]) {
