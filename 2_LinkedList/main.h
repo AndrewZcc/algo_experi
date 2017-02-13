@@ -10,6 +10,8 @@
 #include "2_2_DeleteNode.h"
 #include "2_3_CompareStrings.h"
 #include "2_4_AddNumbers.h"
+#include "2_5_MergeAlternateLinkedList.h"
+#include "2_6_ReverseLinkedList.h"
 
 using namespace std;
 
@@ -54,7 +56,6 @@ void main_2_LinkedList()
     printLinkedList(charList1);
     printLinkedList(charList2);
     cout << "compare(str1, str2) = " << compare(charList1, charList2) << endl;
-    */
 
     // 2-4 add two-numbers represent as Linked-Lists
     Node* numList1 = new Node(9);
@@ -68,6 +69,29 @@ void main_2_LinkedList()
     Node* result = NULL;
     addNumbersLL(numList1, numList2, &result);
     cout << "Compute sum-List: "; printLinkedList(result);
+
+    // 2-5 merge linked-list at alternate positions
+    Node* l1 = NULL;
+    //new Node(1); addNode(&l1, 2); addNode(&l1, 3);
+    Node* l2 = new Node(4);
+    addNode(&l2, 5); addNode(&l2, 6); addNode(&l2, 7); addNode(&l2, 8);
+
+    mergeLinkedList(&l1, &l2);
+
+    cout << "After Merge: "<< endl;
+    cout << "L1: "; printLinkedList(l1);
+    cout << "L2: "; printLinkedList(l2);
+    */
+
+    // 2-6 reverse a linked-list
+    Node* list = new Node(1);
+    addNode(&list, 2); addNode(&list, 3); addNode(&list, 4); addNode(&list, 5);
+    //cout << "Before Reverse: "; printLinkedList(list);
+    //reverse(&list);
+    //cout << "After Reverse: "; printLinkedList(list);
+    // Method-1: reverseLinkedList(&list, 3);
+    // Method-2: Recursion-Method
+    cout << "After reverse{3}, "; printLinkedList(reverseGeeks(list, 3));
 }
 
 #endif //TEN_EIGHT_ALGORITHM_MAIN_H
