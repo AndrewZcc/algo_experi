@@ -12,6 +12,8 @@
 #include "2_4_AddNumbers.h"
 #include "2_5_MergeAlternateLinkedList.h"
 #include "2_6_ReverseLinkedList.h"
+#include "2_7_UnionANDIntersection.h"
+#include "2_8_DetectRemoveLoop.h"
 
 using namespace std;
 
@@ -81,7 +83,6 @@ void main_2_LinkedList()
     cout << "After Merge: "<< endl;
     cout << "L1: "; printLinkedList(l1);
     cout << "L2: "; printLinkedList(l2);
-    */
 
     // 2-6 reverse a linked-list
     Node* list = new Node(1);
@@ -92,6 +93,31 @@ void main_2_LinkedList()
     // Method-1: reverseLinkedList(&list, 3);
     // Method-2: Recursion-Method
     cout << "After reverse{3}, "; printLinkedList(reverseGeeks(list, 3));
+
+    // 2-7 union and intersection
+    Node* l1 = new Node(10); addNode(&l1, 15); addNode(&l1, 4); addNode(&l1, 20);
+    Node* l2 = new Node(8); addNode(&l2, 4); addNode(&l2, 2); addNode(&l2, 10);
+    cout << "L1 = "; printLinkedList(l1);
+    cout << "L2 = "; printLinkedList(l2);
+    cout << "Union List: "; printLinkedList(unionList(l1, l2));
+    cout << "Intersect List: "; printLinkedList(intersectList(l1, l2));
+    */
+
+    // 2-8 detect and remove linked-list loop.
+    // {注意: 利用到了 Floyd Cycle Detection Algorithm. [ More Faster, More Stronger] }
+    Node* l1 = new Node(10); addNode(&l1, 15); addNode(&l1, 4); addNode(&l1, 20);
+    l1->next->next->next->next = l1; // l1->next;
+    // printLinkedList(l1); --> 此时形成了环, 打印链表的时候 崩溃了
+
+    cout << "L1 has loop? "; FloydCycleDetect(l1) ? cout << "Yes" << endl : cout << "No" << endl;
+
+    if (DetectRemoveLoop(&l1))
+    {
+        cout << "L1 has loop! And the loop is removed! " << endl;
+        cout << "After Remove Loop, "; printLinkedList(l1);
+    } else {
+        cout << "L1 has NOT loop!" << endl;
+    }
 }
 
 #endif //TEN_EIGHT_ALGORITHM_MAIN_H

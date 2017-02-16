@@ -1,5 +1,11 @@
 ## Linked List Algorithm Conclusions
 
+### 学会使用 C++ STL
+
+1. `<set>`
+2. `<stack>`
+3. `<queue> 等`
+
 ### 注意事项
 1. 指针定义
 
