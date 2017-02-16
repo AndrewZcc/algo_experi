@@ -32,7 +32,31 @@
 	srand(time(NULL));		// 用系统时间作为每次执行的 seeds，从而确保了种子的不同。
 	rand();					// 因种子的不同，确保了每次执行时 会产生不同的随机数序列!
 	```
-
+	
+## 
 > 引申：蓄水池抽样 (reservior sampling)
 
+* 问题描述：
+	- 从不确定的 N 个元素中 随机抽取出 k 个元素出来！
+	- 要求 等概率 的抽取！
+* 解决方案：
+	- `蓄水池抽样 (reservior sampling)`: 保持一个大小为 k 的集合作为蓄水池！依次遍历所有数据的时候以 一定概率( k / i ) 替换这个蓄水池中样本数据！
+* 伪代码：
+	
+	```
+	Init : a reservior with size = k
+	
+	for i = k+1 to N
+		int random = rand() % i; 	// 产生一个处于[0, i-1]区间内的随机数
+		if (random < k)				// 代表落在了蓄水池内，代表被抽中了！
+			swap(reservior[random], i-th element); // 第 i 个元素被选中了，交换进入蓄水池内
+	end for
+	
+	Output : the reservior! (k samples)
+	```
+* 算法特点分析
+	- 时间复杂度很低：`O(N)`
+	- 事先不需要知道 N 的确切个数，非常适用于大数据流的情形！
+
+## 
 	
