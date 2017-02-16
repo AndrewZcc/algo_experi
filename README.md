@@ -4,8 +4,8 @@
 
 Field 	| Field
 :---	| :--- 
-✅ Graph	| Linked List
-Dynamic Programming | Sorting && Searching
+✅ Graph	| ✅ Linked List
+🏃 Dynamic Programming | 🏃 Sorting && Searching
 Tree / Binary Search Tree | Number Theory
 BIT Manipulation | String && Array
 

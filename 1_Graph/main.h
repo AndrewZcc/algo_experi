@@ -8,7 +8,7 @@
 #include "1_7_PrimAlgo.h"
 #include "1_8_TopologicalSort.h"
 #include "1_9_Apply_FindWords.h"
-#include "1_10_Apply_FindBridges.h"
+#include "1_A_Apply_FindBridges.h"
 
 using namespace std;
 
