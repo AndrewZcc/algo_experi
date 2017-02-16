@@ -14,6 +14,8 @@
 #include "2_6_ReverseLinkedList.h"
 #include "2_7_UnionANDIntersection.h"
 #include "2_8_DetectRemoveLoop.h"
+#include "2_9_MergeSortLinkedList.h"
+#include "2_10_RandomNodeOneTraversal.h"
 
 using namespace std;
 
@@ -101,12 +103,13 @@ void main_2_LinkedList()
     cout << "L2 = "; printLinkedList(l2);
     cout << "Union List: "; printLinkedList(unionList(l1, l2));
     cout << "Intersect List: "; printLinkedList(intersectList(l1, l2));
-    */
 
     // 2-8 detect and remove linked-list loop.
     // {注意: 利用到了 Floyd Cycle Detection Algorithm. [ More Faster, More Stronger] }
-    Node* l1 = new Node(10); addNode(&l1, 15); addNode(&l1, 4); addNode(&l1, 20);
-    l1->next->next->next->next = l1; // l1->next;
+    Node* l1 = new Node(0); addNode(&l1, 1); addNode(&l1, 2); addNode(&l1, 3);
+    addNode(&l1, 4); addNode(&l1, 5); addNode(&l1, 6); addNode(&l1, 7);
+    Node* temp = l1->next->next->next->next;
+    temp = temp->next->next->next->next = l1; // l1->next;
     // printLinkedList(l1); --> 此时形成了环, 打印链表的时候 崩溃了
 
     cout << "L1 has loop? "; FloydCycleDetect(l1) ? cout << "Yes" << endl : cout << "No" << endl;
@@ -118,6 +121,36 @@ void main_2_LinkedList()
     } else {
         cout << "L1 has NOT loop!" << endl;
     }
+    */
+
+    // 2-9 MergeSort for linked-list!
+    Node* list1 = new Node(20);
+    Node* list2 = new Node(20); addNode(&list2, 14); addNode(&list2, 24);
+    Node* list3 = new Node(20); addNode(&list3, 14); addNode(&list3, 24); addNode(&list3, 10);
+
+    cout << "list-1, "; printLinkedList(list1);
+    MergeSort(&list1);
+    cout << "After merge-sort: "; printLinkedList(list1);
+    cout << endl;
+    cout << "list-2, "; printLinkedList(list2);
+    MergeSort(&list2);
+    cout << "After merge-sort: "; printLinkedList(list2);
+    cout << endl;
+    cout << "list-3, "; printLinkedList(list3);
+    MergeSort(&list3);
+    cout << "After merge-sort: "; printLinkedList(list3);
+    cout << endl;
+
+    // 2-10 Generate random linked-list node in one traversal
+    randTest();
+    printLinkedList(list3);
+    printRandom(list3);
+    sleep(2);   // 进程等待 2 s, 从而使 随机数种子 发生变化
+    printRandom(list3);
+    sleep(2);   // 进程等待 2 s, 从而使 随机数种子 发生变化
+    printRandom(list3);
+    sleep(2);   // 进程等待 2 s, 从而使 随机数种子 发生变化
+    printRandom(list3);
 }
 
 #endif //TEN_EIGHT_ALGORITHM_MAIN_H
