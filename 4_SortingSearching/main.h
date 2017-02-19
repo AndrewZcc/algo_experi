@@ -6,13 +6,14 @@
 #include "4_5_MergeSort.h"
 #include "4_6_HeapSort.h"
 #include "4_7_QuickSort.h"
+#include "4_8_InterpolationSearch.h"
 
 using namespace std;
 
 void main_4_SortingSearching()
 {
+    /* ***---------- Searching (part-1) ------------*** */
     /*
-    //cout << "Sorting and Searching Algorithm." << endl;
     int sortedArr[] = {4, 10, 23, 25, 31, 35};
 
     // 4-1: Binary Search (Using Recursive Algorithm)
@@ -43,6 +44,7 @@ void main_4_SortingSearching()
     */
 
     /* ***---------- Sorting ------------*** */
+    /*
     // 4-3: Bubble Sort
     int arr[] = {10, 8, 12, 14, 6, 30, 11};
     int len = sizeof(arr)/sizeof(arr[0]);
@@ -82,4 +84,19 @@ void main_4_SortingSearching()
     QuickSort(arr5, 0, len-1);
     cout << "After sort: "; printArr(arr5, len);
     cout << "---- END ----\n" << endl;
+    */
+
+    /* ***---------- Searching (part-2) ------------*** */
+    // 4-8: Interpolation Search (search on a sorted array with uniformly distributed values.)
+    int arr[] = {10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    int key;
+    while (cin >> key)
+    {
+        if (key == -1) break;
+
+        int pos = InterpolationSearch(arr, len, key);
+
+        pos == -1 ? cout << "Not Found!" << endl : cout << "Founded! index = " << pos << endl;
+    }
 }
