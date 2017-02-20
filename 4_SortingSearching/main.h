@@ -7,6 +7,8 @@
 #include "4_6_HeapSort.h"
 #include "4_7_QuickSort.h"
 #include "4_8_InterpolationSearch.h"
+#include "4_9_KthElementUnsortedArray.h"
+#include "4_A_SearchPairToX.h"
 
 using namespace std;
 
@@ -87,6 +89,7 @@ void main_4_SortingSearching()
     */
 
     /* ***---------- Searching (part-2) ------------*** */
+    /*
     // 4-8: Interpolation Search (search on a sorted array with uniformly distributed values.)
     int arr[] = {10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47};
     int len = sizeof(arr)/sizeof(arr[0]);
@@ -99,4 +102,28 @@ void main_4_SortingSearching()
 
         pos == -1 ? cout << "Not Found!" << endl : cout << "Founded! index = " << pos << endl;
     }
+    */
+
+    // 4-9: Search K-th Smallest/Largest element in given Unsorted-Array
+    int arr[] = {12, 3, 5, 7, 4, 19, 26};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    printArr(arr, len);
+    int k;
+    while (cin >> k) {
+        if (k == -1) break;
+        int KthElement = KthSmallest(arr, 0, len - 1, k);
+        KthElement == -1 ? cout << "Not Found!" << endl : cout << k << "th-Element = " << KthElement << endl;
+    }
+
+    /*
+    // 4-10: Search the closest pair to X in given Sorted-Array
+    int arr1[] = {10, 22, 28, 29, 30, 40}, X1 = 54;
+    int len = sizeof(arr1)/sizeof(arr1[0]);
+    printArr(arr1, len);
+    SearchPairToX(arr1, len, X1);
+    int arr2[] = {3, 6, 9, 9, 10, 11, 14}, X2 = 18;
+    len = sizeof(arr2)/sizeof(arr2[0]);
+    printArr(arr2, len);
+    SearchPairToX(arr2, len, X2);
+    */
 }
