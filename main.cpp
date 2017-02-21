@@ -3,6 +3,7 @@
  */
 #include "1_Graph/main.h"
 #include "2_LinkedList/main.h"
+#include "3_DynamicProgramming/main.h"
 #include "4_SortingSearching/main.h"
 
 /**
@@ -10,9 +11,13 @@
  */
 int main()
 {
+    /* *** STAGE-One *** */
     //main_1_Graph();
     //main_2_LinkedList();
-    main_4_SortingSearching();
+    main_3_DynamicProgramming();
+    //main_4_SortingSearching();
+
+    /* *** STAGE-Two *** */
 
     return 0;
 }
