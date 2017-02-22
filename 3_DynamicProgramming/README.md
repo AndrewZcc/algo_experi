@@ -10,3 +10,7 @@
 	> Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems and stores the results of subproblems to avoid computing the same results again.
 
 2. 适合使用动态规划进行求解的问题具有两大特征：`Overlapping/Common Subproblems` 和 `Optimal Substructure`。
+
+	> 动态规划 和 递归 的一个显著区别也就在这两点：  
+	> 1. 动态规划 所涉及到的子问题都是 重叠 的！  
+	> 2. 动态规划 每个重叠的子问题都有一个 最优解！
