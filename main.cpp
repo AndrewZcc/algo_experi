@@ -13,8 +13,8 @@ int main()
 {
     /* *** STAGE-One *** */
     //main_1_Graph();
-    //main_2_LinkedList();
-    main_3_DynamicProgramming();
+    main_2_LinkedList();
+    //main_3_DynamicProgramming();
     //main_4_SortingSearching();
 
     /* *** STAGE-Two *** */

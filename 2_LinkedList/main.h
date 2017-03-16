@@ -16,6 +16,7 @@
 #include "2_8_DetectRemoveLoop.h"
 #include "2_9_MergeSortLinkedList.h"
 #include "2_A_RandomNodeOneTraversal.h"
+#include "pairwiseReverseList.h"
 
 using namespace std;
 
@@ -127,7 +128,13 @@ void main_2_LinkedList()
     Node* list1 = new Node(20);
     Node* list2 = new Node(20); addNode(&list2, 14); addNode(&list2, 24);
     Node* list3 = new Node(20); addNode(&list3, 14); addNode(&list3, 24); addNode(&list3, 10);
+    addNode(&list3, 6); addNode(&list3, 9); addNode(&list3, 11);
 
+    cout << "Before reverse: "; printLinkedList(list1);
+    list1 = reversePairwise(&list1);
+    cout << "After reverse: "; printLinkedList(list1);
+
+    /*
     cout << "list-1, "; printLinkedList(list1);
     MergeSort(&list1);
     cout << "After merge-sort: "; printLinkedList(list1);
@@ -151,6 +158,7 @@ void main_2_LinkedList()
     printRandom(list3);
     sleep(2);   // 进程等待 2 s, 从而使 随机数种子 发生变化
     printRandom(list3);
+    */
 }
 
 #endif //TEN_EIGHT_ALGORITHM_MAIN_H
